@@ -138,10 +138,10 @@ public class CustomerGUI extends JDialog {
 		setVisible(false); // Hide the current dialog
 		dispose(); // Dispose of system resources associated with the dialog
 
-		// Create an instance of the Payment class
+		// Creates an instance of the Payment class
 		Payment payment = new Payment(oc);
 		
-		// Set the size and display the Payment dialog
+		// Sets the size and display the Payment dialog
 		payment.setSize(600, 500);
 		payment.setVisible(true);
 	}
