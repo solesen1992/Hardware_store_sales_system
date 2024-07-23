@@ -13,7 +13,7 @@ import model.UniqueProduct; // Import the UniqueProduct class from the model pac
  * This class handles operations related to products in the system.
  * The ProductController class manages product-related operations in an application. 
  * It acts as an intermediary between the view layer and the model layer, handling the 
- * retrieval and management of products and their copies. 
+ * retrieval and management of products and their copies.
  * 
  * @author Gruppe 2
  * @version 1
