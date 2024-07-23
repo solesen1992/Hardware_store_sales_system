@@ -42,23 +42,23 @@ public class Invoice extends JDialog {
 	}
 
 	/**
-	 * Create the dialog.
+	 * Creates the dialog.
 	 */
 	public Invoice(Order order) {
-		// Set the icon image for the dialog
+		// Sets the icon image for the dialog
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\albie\\Downloads\\V logo.png"));
 		setBounds(100, 100, 450, 500);
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(new BorderLayout());
 
-		// Create and add a button panel at the bottom of the dialog
+		// Creates and adds a button panel at the bottom of the dialog
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 		}
 
-		// Create and add a JTextPane for displaying the invoice
+		// Creates and adds a JTextPane for displaying the invoice
 		{
 			textPane = new JTextPane();
 			textPane.setFont(new Font("Tahoma", Font.PLAIN, 11));
@@ -93,7 +93,7 @@ public class Invoice extends JDialog {
 		textPane.setText(textPane.getText()
 				+ "  ------------------------------------------------------------------------------------------------------\n");
 
-		// Loop through the order lines and add product details
+		// Loops through the order lines and add product details
 		for (OrderLine ol : order.getOrderLines()) {
 			textPane.setText(textPane.getText() + "  " + ol.getProduct().getName() + "\t\t      " + ol.getQuantity()
 					+ "\t\t\t" + ol.getProduct().getPrice() + "\n");
