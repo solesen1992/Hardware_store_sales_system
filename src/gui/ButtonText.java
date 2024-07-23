@@ -4,7 +4,7 @@ package gui;
  * Utility class to store button text constants.
  * 
  * This class is used to centralize button text strings for consistency across the GUI.
- * By using constants, the text for buttons can be easily managed and updated in one place.
+ * By using constants, the text for buttons can be easily managed and updated in one place. 
  * 
  * @version 1.0
  */
