@@ -178,7 +178,7 @@ public class OrderMenu extends JFrame {
 	}
 
 	/**
-	 * Initialize the controllers and StartGUI
+	 * Initializes the controllers and StartGUI
 	 */
 	private void init() {
 		orderController = new OrderController(employee);
@@ -187,7 +187,7 @@ public class OrderMenu extends JFrame {
 	}
 
 	/**
-	 * Handle the OK button click
+	 * Handles the OK button click
 	 */
 	private void okClicked() {
 		String stregkode = textField.getText();
