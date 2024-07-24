@@ -44,7 +44,7 @@ public class SerialNo extends JDialog {
 	}
 
 	/**
-	 * Create the dialog.
+	 * Creates the dialog.
 	 */
 	public SerialNo() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\albie\\Downloads\\V logo.png")); // Set the icon for the dialog
@@ -100,7 +100,7 @@ public class SerialNo extends JDialog {
 	}
 
 	/**
-	 * Get the value entered by the user.
+	 * Gets the value entered by the user.
 	 * 
 	 * @return The entered serial number.
 	 */
