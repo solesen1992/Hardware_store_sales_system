@@ -61,7 +61,7 @@ public class StartGUI extends JFrame {
 	}
 
 	/**
-	 * Create the frame and initialize its components.
+	 * Creates the frame and initialize its components.
 	 */
 	public StartGUI() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\albie\\Downloads\\V logo.png")); // Set the frame icon
@@ -73,7 +73,7 @@ public class StartGUI extends JFrame {
 		setContentPane(contentPane); // Set the content pane for the frame
 		contentPane.setLayout(null); // Use null layout for manual positioning
 
-		// Create and configure the "Rediger" button
+		// Creates and configure the "Rediger" button
 		JButton btnEdit = new JButton("Rediger");
 		btnEdit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -85,14 +85,14 @@ public class StartGUI extends JFrame {
 		btnEdit.setBounds(50, 40, 250, 80); // Set button position and size
 		contentPane.add(btnEdit); // Add button to the content pane
 
-		// Create and configure the "Kunde" button
+		// Creates and configure the "Kunde" button
 		JButton btnCostumer = new JButton("Kunde");
 		btnCostumer.setBackground(UIManager.getColor("Button.background")); // Set button background color
 		btnCostumer.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20)); // Set button font
 		btnCostumer.setBounds(50, 150, 250, 80); // Set button position and size
 		contentPane.add(btnCostumer); // Add button to the content pane
 
-		// Create and configure the "Retur" button
+		// Creates and configure the "Retur" button
 		JButton btnReturn = new JButton("Retur");
 		btnReturn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -104,7 +104,7 @@ public class StartGUI extends JFrame {
 		btnReturn.setBounds(50, 270, 250, 80); // Set button position and size
 		contentPane.add(btnReturn); // Add button to the content pane
 
-		// Create and configure the "Lager" button
+		// Creates and configure the "Lager" button
 		JButton btnStorage = new JButton("Lager");
 		btnStorage.setOpaque(false); // Set button transparency
 		btnStorage.setBackground(UIManager.getColor("Button.background")); // Set button background color
@@ -117,7 +117,7 @@ public class StartGUI extends JFrame {
 		});
 		contentPane.add(btnStorage); // Add button to the content pane
 
-		// Create and configure the "Udskrivning" button
+		// Creates and configure the "Udskrivning" button
 		JButton btnPrintOut = new JButton("Udskrivning");
 		btnPrintOut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -129,14 +129,14 @@ public class StartGUI extends JFrame {
 		btnPrintOut.setBounds(50, 645, 250, 80); // Set button position and size
 		contentPane.add(btnPrintOut); // Add button to the content pane
 
-		// Create and configure the "Gavekort" button
+		// Creates and configure the "Gavekort" button
 		JButton btnGiftcard = new JButton("Gavekort");
 		btnGiftcard.setBackground(UIManager.getColor("Button.background")); // Set button background color
 		btnGiftcard.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20)); // Set button font
 		btnGiftcard.setBounds(50, 524, 250, 80); // Set button position and size
 		contentPane.add(btnGiftcard); // Add button to the content pane
 
-		// Create and configure the "Næste" button
+		// Creates and configure the "Næste" button
 		JButton btnNext = new JButton("Næste");
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -148,19 +148,19 @@ public class StartGUI extends JFrame {
 		btnNext.setBounds(935, 660, 300, 65); // Set button position and size
 		contentPane.add(btnNext); // Add button to the content pane
 
-		// Create and configure the barcode text field
+		// Creates and configure the barcode text field
 		textFieldBarcode = new JTextField();
 		textFieldBarcode.setBounds(500, 550, 300, 40); // Set text field position and size
 		contentPane.add(textFieldBarcode); // Add text field to the content pane
 		textFieldBarcode.setColumns(10); // Set text field column count
 
-		// Create and configure the quantity text field
+		// Creates and configure the quantity text field
 		textFieldQuantity = new JTextField();
 		textFieldQuantity.setBounds(500, 600, 300, 40); // Set text field position and size
 		contentPane.add(textFieldQuantity); // Add text field to the content pane
 		textFieldQuantity.setColumns(10); // Set text field column count
 
-		// Create and configure the barcode label
+		// Creates and configure the barcode label
 		JLabel lblBarcode = new JLabel("Stregkode");
 		lblBarcode.setBackground(Color.CYAN); // Set label background color
 		lblBarcode.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20)); // Set label font
