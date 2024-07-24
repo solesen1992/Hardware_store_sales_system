@@ -23,7 +23,8 @@ public class StartPageGUI extends AbstractTableModel {
     public StartPageGUI(List<OrderLine> data) {
         this.data = data; // Set the data for the table
         if (data == null) {
-            data = new ArrayList<>(); // Initialize data if it is null
+        	// Initialize data if it is null
+            data = new ArrayList<>(); 
         }
     }
 
@@ -34,7 +35,8 @@ public class StartPageGUI extends AbstractTableModel {
      */
     @Override
     public int getRowCount() {
-        return data.size(); // Return the size of the data list as the row count
+    	// Return the size of the data list as the row count
+        return data.size(); 
     }
 
     /**
@@ -45,7 +47,8 @@ public class StartPageGUI extends AbstractTableModel {
      */
     @Override
     public String getColumnName(int col) {
-        return COL_NAMES[col]; // Return the column name based on the column index
+    	// Return the column name based on the column index
+        return COL_NAMES[col]; 
     }
 
     /**
@@ -55,7 +58,8 @@ public class StartPageGUI extends AbstractTableModel {
      */
     @Override
     public int getColumnCount() {
-        return COL_NAMES.length; // Return the length of COL_NAMES array as the column count
+    	// Return the length of COL_NAMES array as the column count
+        return COL_NAMES.length; 
     }
 
     /**
@@ -67,21 +71,29 @@ public class StartPageGUI extends AbstractTableModel {
      */
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        OrderLine ol = data.get(rowIndex); // Get the OrderLine object for the specified row
-        String res = ""; // Initialize result variable
+    	// Get the OrderLine object for the specified row
+        OrderLine ol = data.get(rowIndex); 
+        // Initialize result variable
+        String res = ""; 
         switch (columnIndex) {
             case 0:
-                res = ol.getProduct().getName(); // Get the product name for the first column
+            	// Get the product name for the first column
+                res = ol.getProduct().getName(); 
                 break;
             case 1:
-                int quantity = ol.getQuantity(); // Get the quantity for the second column
-                res = Integer.toString(quantity); // Convert quantity to string
+            	// Get the quantity for the second column
+                int quantity = ol.getQuantity(); 
+                // Convert quantity to string
+                res = Integer.toString(quantity); 
                 break;
             case 2:
-                double price = ol.getProduct().getPrice(); // Get the price for the third column
-                res = Double.toString(price); // Convert price to string
+            	// Get the price for the third column
+                double price = ol.getProduct().getPrice(); 
+                // Convert price to string
+                res = Double.toString(price); 
                 break;
         }
-        return res; // Return the result
+        // Return the result
+        return res; 
     }
 }
