@@ -71,20 +71,20 @@ public class Payment extends JDialog {
 		btnCard.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
 		contentPanel.add(btnCard);
 
-		// Configure the button panel
+		// Configures the button panel
 		JPanel buttonPane = new JPanel();
 		buttonPane.setBounds(0, 350, 600, 89);
 		getContentPane().add(buttonPane);
 		buttonPane.setLayout(null);
 
-		// Add the "Cancel" button
+		// Adds the "Cancel" button
 		cancelButton = new JButton("Tilbage");
 		cancelButton.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
 		cancelButton.setBounds(240, 30, 150, 60);
 		cancelButton.setActionCommand("Cancel");
 		buttonPane.add(cancelButton);
 
-		// Add the "Print" button and its ActionListener
+		// Adds the "Print" button and its ActionListener
 		JButton btnPrintInvoice = new JButton("Print");
 		btnPrintInvoice.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
 		btnPrintInvoice.setBounds(400, 30, 150, 60);
@@ -99,7 +99,7 @@ public class Payment extends JDialog {
 	}
 
 	/**
-	 * Handle the printing of the invoice
+	 * Handles the printing of the invoice
 	 */
 	private void printInvoicePayed() {
 		setVisible(false); // Hide the current dialog
