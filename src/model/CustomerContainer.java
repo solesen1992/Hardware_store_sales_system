@@ -19,7 +19,8 @@ public class CustomerContainer {
      * with a new ArrayList upon object creation.
      */
     public CustomerContainer() {
-        customers = new ArrayList<>();  // Initializes the ArrayList that will hold Customer objects.
+    	// Initializes the ArrayList that will hold Customer objects.
+        customers = new ArrayList<>();  
     }
 
     /**
@@ -31,9 +32,11 @@ public class CustomerContainer {
      */
     public static CustomerContainer getInstance() {
         if (instance == null) {
-            instance = new CustomerContainer();  // Creates a new instance if one doesn't exist.
+        	// Creates a new instance if one doesn't exist.
+            instance = new CustomerContainer();  
         }
-        return instance;  // Returns the single instance of CustomerContainer.
+        // Returns the single instance of CustomerContainer.
+        return instance;  
     }
 
     /**
@@ -46,13 +49,18 @@ public class CustomerContainer {
      * @return The updated customer object, or null if the customer was not found.
      */
     public Customer updateCustomer(String email, String updatedEmail, String updatedPhoneNo, String updatedAddress) {
-        Customer customer = findCustomer(email);  // Finds the customer by email.
+        // Finds the customer by email.
+    	Customer customer = findCustomer(email);  
         if (customer != null) {
-            customer.setEmail(updatedEmail);  // Updates the customer's email.
-            customer.setPhoneNo(updatedPhoneNo);  // Updates the customer's phone number.
-            customer.setAddress(updatedAddress);  // Updates the customer's address.
+        	// Updates the customer's email.
+            customer.setEmail(updatedEmail);  
+            // Updates the customer's phone number.
+            customer.setPhoneNo(updatedPhoneNo);  
+            // Updates the customer's address.
+            customer.setAddress(updatedAddress);  
         }
-        return customer;  // Returns the updated customer, or null if not found.
+        // Returns the updated customer, or null if not found.
+        return customer;  
     }
 
     /**
@@ -62,15 +70,21 @@ public class CustomerContainer {
      * @return The customer object if found, otherwise null.
      */
     public Customer findCustomer(String email) {
-        Customer res = null;  // Initialize result as null.
-        List<Customer> allCustomers = findAll();  // Retrieves all customers.
-
-        for (Customer customer : allCustomers) {  // Iterates through the list of customers.
-            if (customer.getEmail().equalsIgnoreCase(email)) {  // Checks if the customer's email matches.
-                res = customer;  // Sets the result to the matching customer.
+    	// Initialize result as null.
+        Customer res = null;  
+        // Retrieves all customers.
+        List<Customer> allCustomers = findAll();  
+        
+        // Iterates through the list of customers.
+        for (Customer customer : allCustomers) {  
+        	// Checks if the customer's email matches.
+            if (customer.getEmail().equalsIgnoreCase(email)) {  
+            	// Sets the result to the matching customer.
+                res = customer;  
             }
         }
-        return res;  // Returns the found customer or null if not found.
+        // Returns the found customer or null if not found.
+        return res;  
     }
 
     /**
@@ -80,11 +94,14 @@ public class CustomerContainer {
      * @return True if the customer was added successfully, otherwise false.
      */
     public boolean addCustomer(Customer customer) {
-        boolean res = customer != null;  // Checks if the customer is not null.
+    	// Checks if the customer is not null.
+        boolean res = customer != null;  
         if (res) {
-            customers.add(customer);  // Adds the customer to the list.
+        	// Adds the customer to the list.
+            customers.add(customer);  
         }
-        return res;  // Returns true if the customer was added, otherwise false.
+        // Returns true if the customer was added, otherwise false.
+        return res;  
     }
 
     /**
@@ -94,11 +111,14 @@ public class CustomerContainer {
      * @return The deleted customer object, or null if not found.
      */
     public Customer deleteCustomer(String email) {
-        Customer customer = findCustomer(email);  // Finds the customer to delete.
+    	// Finds the customer to delete.
+        Customer customer = findCustomer(email);  
         if (customer != null) {
-            customers.remove(customer);  // Removes the customer from the list.
+        	// Removes the customer from the list.
+            customers.remove(customer);  
         }
-        return customer;  // Returns the deleted customer or null if not found.
+        // Returns the deleted customer or null if not found.
+        return customer;  
     }
 
     /**
@@ -107,6 +127,7 @@ public class CustomerContainer {
      * @return A list containing all customers.
      */
     public List<Customer> findAll() {
-        return new ArrayList<>(this.customers);  // Returns a new ArrayList containing all customers.
+    	// Returns a new ArrayList containing all customers.
+        return new ArrayList<>(this.customers);  
     }
 }
