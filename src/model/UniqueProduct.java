@@ -56,13 +56,18 @@ public class UniqueProduct extends Product {
      * @return The ProductCopy object if found, otherwise returns null.
      */
     public ProductCopy findProductCopy(String serialNo) {
-        ProductCopy res = null;  // Initialize the result variable to null.
-        for (int i = 0; i < productCopies.size() && res == null; i++) {  // Iterate through the list of product copies.
-            if (productCopies.get(i).getSerialNo().equalsIgnoreCase(serialNo)) {  // Check if the serial number matches (case insensitive).
-                res = productCopies.get(i);  // Set the result to the matching ProductCopy.
+    	// Initialize the result variable to null.
+        ProductCopy res = null;  
+        // Iterate through the list of product copies.
+        for (int i = 0; i < productCopies.size() && res == null; i++) {  
+            // Check if the serial number matches (case insensitive).
+        	if (productCopies.get(i).getSerialNo().equalsIgnoreCase(serialNo)) {  
+                // Set the result to the matching ProductCopy.
+        		res = productCopies.get(i);  
             }
         }
-        return res;  // Return the found ProductCopy or null if not found.
+        // Return the found ProductCopy or null if not found.
+        return res;  
     }
 
     /**
@@ -72,11 +77,14 @@ public class UniqueProduct extends Product {
      * @return True if the product copy was successfully added, false otherwise.
      */
     public boolean addCopy(ProductCopy productCopy) {
-        boolean res = productCopy != null;  // Check if the productCopy is not null.
+    	// Check if the productCopy is not null.
+        boolean res = productCopy != null;  
         if (res) {
-            productCopies.add(productCopy);  // Add the productCopy to the list of product copies.
+        	// Add the productCopy to the list of product copies.
+            productCopies.add(productCopy);  
         }
-        return res;  // Return true if the productCopy was added, otherwise false.
+        // Return true if the productCopy was added, otherwise false.
+        return res;  
     }
     
     /**
@@ -86,11 +94,15 @@ public class UniqueProduct extends Product {
      * @return True if the serial number is valid (exists in the list), otherwise false.
      */
     public boolean isValidSerialNumber(String serialNo) {
-        for (ProductCopy copy : productCopies) {  // Iterate through each ProductCopy in the list.
-            if (copy.getSerialNo().equalsIgnoreCase(serialNo)) {  // Check if the serial number matches (case insensitive).
-                return true;  // Return true if a match is found.
+    	// Iterate through each ProductCopy in the list.
+        for (ProductCopy copy : productCopies) {  
+        	// Check if the serial number matches (case insensitive).
+            if (copy.getSerialNo().equalsIgnoreCase(serialNo)) {  
+                // Return true if a match is found.
+            	return true;  
             }
         }
-        return false;  // Return false if no match is found after checking all product copies.
+        // Return false if no match is found after checking all product copies.
+        return false;  
     }
 }
