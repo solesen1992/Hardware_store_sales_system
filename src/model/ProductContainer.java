@@ -20,8 +20,10 @@ public class ProductContainer {
      * Initializes the ArrayLists for products and uniqueProducts.
      */
     public ProductContainer() {
-        products = new ArrayList<>(); // Initializes the list of products.
-        uniqueProducts = new ArrayList<>(); // Initializes the list of unique products.
+    	// Initializes the list of products.
+        products = new ArrayList<>(); 
+        // Initializes the list of unique products.
+        uniqueProducts = new ArrayList<>(); 
     }
 
     /**
@@ -32,9 +34,11 @@ public class ProductContainer {
      */
     public static ProductContainer getInstance() {
         if (instance == null) {
-            instance = new ProductContainer(); // Creates a new instance if none exists.
+        	// Creates a new instance if none exists.
+            instance = new ProductContainer(); 
         }
-        return instance; // Returns the existing instance.
+        // Returns the existing instance.
+        return instance; 
     }
 
     /**
@@ -43,7 +47,8 @@ public class ProductContainer {
      * @param product The product to add to the list.
      */
     public void addProduct(Product product) {
-        products.add(product); // Adds the given product to the products list.
+    	// Adds the given product to the products list.
+        products.add(product); 
     }
 
     /**
@@ -54,13 +59,18 @@ public class ProductContainer {
      * @return The product with the matching barcode, or null if not found.
      */
     public Product findProduct(String barcode) {
-        Product res = null; // Variable to store the result.
-        for (int i = 0; i < products.size() && res == null; i++) { // Iterates through the list of products.
-            if (barcode.equals(products.get(i).getBarcode())) { // Checks if the barcode matches.
-                res = products.get(i); // Sets the result to the matched product.
+    	// Variable to store the result.
+        Product res = null; 
+        // Iterates through the list of products.
+        for (int i = 0; i < products.size() && res == null; i++) { 
+        	// Checks if the barcode matches.
+            if (barcode.equals(products.get(i).getBarcode())) { 
+            	// Sets the result to the matched product.
+                res = products.get(i); 
             }
         }
-        return res; // Returns the found product or null.
+        // Returns the found product or null.
+        return res; 
     }
 
     /**
@@ -71,11 +81,15 @@ public class ProductContainer {
      * @return The product copy with the matching serial number, or null if not found.
      */
     public ProductCopy findProductCopy(String serialNo) {
-        ProductCopy res = null; // Variable to store the result.
-        for (int i = 0; i < uniqueProducts.size() && res == null; i++) { // Iterates through the list of unique products.
-            res = uniqueProducts.get(i).findProductCopy(serialNo); // Searches for the product copy within each unique product.
+    	// Variable to store the result.
+        ProductCopy res = null; 
+        // Iterates through the list of unique products.
+        for (int i = 0; i < uniqueProducts.size() && res == null; i++) { 
+        	// Searches for the product copy within each unique product.
+            res = uniqueProducts.get(i).findProductCopy(serialNo); 
         }
-        return res; // Returns the found product copy or null.
+        // Returns the found product copy or null.
+        return res; 
     }
     
     /**
@@ -84,6 +98,7 @@ public class ProductContainer {
      * @return A list containing all products.
      */
     public List<Product> findAll() {
-        return new ArrayList<>(this.products); // Returns a new ArrayList with the contents of the products list.
+    	// Returns a new ArrayList with the contents of the products list.
+        return new ArrayList<>(this.products); 
     }
 }
