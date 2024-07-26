@@ -24,8 +24,10 @@ public class OrderContainer {
      * The constructor is private to enforce singleton pattern.
      */
     private OrderContainer() {
-        this.nextOrderNo = 1000000;  // Sets the initial value for the next order number.
-        orders = new ArrayList<>();  // Initializes the orders list as a new ArrayList.
+    	// Sets the initial value for the next order number.
+        this.nextOrderNo = 1000000;  
+        // Initializes the orders list as a new ArrayList.
+        orders = new ArrayList<>();  
     }
 
     /**
@@ -36,9 +38,11 @@ public class OrderContainer {
      */
     public static OrderContainer getInstance() {
         if (instance == null) {
-            instance = new OrderContainer();  // Creates a new instance if one does not exist.
+        	// Creates a new instance if one does not exist.
+            instance = new OrderContainer();  
         }
-        return instance;  // Returns the singleton instance.
+        // Returns the singleton instance.
+        return instance;  
     }
 
     /**
@@ -48,8 +52,11 @@ public class OrderContainer {
      * @return True if the order was added successfully.
      */
     public boolean addOrder(Order order) {
-        orders.add(order);  // Adds the provided Order object to the list of orders.
-        order.setOrderNo("" + nextOrderNo++);  // Sets a unique order number to the order and increments the nextOrderNo.
-        return true;  // Returns true to indicate that the order was added successfully.
+    	// Adds the provided Order object to the list of orders.
+        orders.add(order);  
+        // Sets a unique order number to the order and increments the nextOrderNo.
+        order.setOrderNo("" + nextOrderNo++);  
+        // Returns true to indicate that the order was added successfully.
+        return true;  
     }
 }
