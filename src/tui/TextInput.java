@@ -3,9 +3,9 @@ import java.util.Scanner; // Imports the Scanner class
 
 /**
  * TextInput class 
- * 
+ *  
  * Provides methods for getting user input from the console.
- * 
+ *  
  * @version 0.0.2 initial draft version
  * @authors Istvan Knoll, Mogens Holm Iversen, Gruppe 2 
  */
