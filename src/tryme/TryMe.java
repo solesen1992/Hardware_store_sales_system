@@ -29,7 +29,7 @@ public class TryMe {
      */
     public static void generateTestData() {
 
-        // Instantiates simple products
+        // Instantiates simple products.
         // Creates a SimpleProduct object named "Stålsøm" with its attributes.
         SimpleProduct simpleProduct1 = new SimpleProduct("Stålsøm", "Universalsøm", 27.95, 1000, "NKT Fasteners",
                 "9365937", "Medium");
