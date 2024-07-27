@@ -93,7 +93,7 @@ public class MainMenu {
 	 * Prints a "the end" message when the user chooses to exit the program.
 	 */
 	private void writeEnd() {
-        // Prints a farewell message to the console
+        // Prints a farewell message to the console.
 		System.out.println("Tak for denne gang");
 	}
 }
