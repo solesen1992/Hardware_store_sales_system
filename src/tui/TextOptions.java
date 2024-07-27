@@ -59,7 +59,7 @@ public class TextOptions {
 
     /**
      * Displays the menu and prompts the user for input
-     * 
+     *  
      * @return The index of the chosen option
      */
     public int prompt() {
