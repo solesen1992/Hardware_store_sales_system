@@ -221,7 +221,7 @@ public class CustomerTUI {
 
 	/**
 	 * Adds a new customer by collecting necessary details from the user.
-	 */
+	 */ 
 	private void addCustomer() {
 		String name = TextInput.inputString("Indtast navn"); // Prompts for name
 		String email = TextInput.inputString("Indtast email"); // Prompts for email
