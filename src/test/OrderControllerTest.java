@@ -31,16 +31,16 @@ class OrderControllerTest {
 	 */
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
-		// Initialize the OrderController with an Employee
+		// Initializes the OrderController with an Employee
 		orderController = new OrderController(new Employee("Ben", "23123")); 
-		// Create a new order
+		// Creates a new order
 		orderController.createOrder(); 
 	}
 	
 	/**
 	 * This is a test method for the findAndAddCustomer method in the OrderController
 	 * It will find and add a customer to the order and check if it is 
-	 * the right customer
+	 * the right customer.
 	 */
 	@Test
 	public void findAndAddPrivateCustomerTest() {

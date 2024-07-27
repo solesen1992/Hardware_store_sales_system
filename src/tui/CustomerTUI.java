@@ -32,27 +32,36 @@ public class CustomerTUI {
 	 * Constructor initializes the CustomerController and sets the employee.
 	 */
 	public CustomerTUI(Employee employee) {
-		customerController = new CustomerController(); // Initializes the customer controller
-		this.employee = employee; // Sets the current employee
+		// Initializes the customer controller
+		customerController = new CustomerController(); 
+		// Sets the current employee
+		this.employee = employee; 
 	}
 
 	/**
 	 * Starts and displays the customer menu loop. Allows the user to make choices until they choose to exit.
 	 */
 	public void start() {
-		boolean running = true; // Flag to keep the loop running
+		// Flag to keep the loop running
+		boolean running = true; 
 		while (running) {
-			int choice = writeCustomerMenu(); // Displays menu and gets user's choice
+			// Displays menu and gets user's choice
+			int choice = writeCustomerMenu(); 
 			if (choice == 1) {
-				createCustomer(); // Calls method to create a customer
+				// Calls method to create a customer
+				createCustomer(); 
 			} else if (choice == 2) {
-				updateCustomer(); // Calls method to update a customer
+				// Calls method to update a customer
+				updateCustomer(); 
 			} else if (choice == 3) {
-				deleteCustomer(); // Calls method to delete a customer
+				// Calls method to delete a customer
+				deleteCustomer(); 
 			} else if (choice == 4) {
-				customerList(); // Calls method to display customer list
+				// Calls method to display customer list
+				customerList(); 
 			} else {
-				running = false; // Exits the loop
+				// Exits the loop
+				running = false; 
 			}
 		}
 	}
@@ -61,26 +70,38 @@ public class CustomerTUI {
 	 * Creates a customer by collecting necessary details from the user.
 	 */
 	private void createCustomer() {
-		addCustomer(); // Calls method to add a customer
+		// Calls method to add a customer
+		addCustomer(); 
 
-		boolean keepAdding = true; // Flag to keep adding customers
+		// Flag to keep adding customers
+		boolean keepAdding = true; 
 		while (keepAdding) {
-			String addMore1 = TextInput.inputString("Ønsker du at tilføje flere kunder(Ja/Nej)"); // Asks if the user wants to add more customers
+			// Asks if the user wants to add more customers
+			String addMore1 = TextInput.inputString("Ønsker du at tilføje flere kunder(Ja/Nej)"); 
 			if (addMore1.equalsIgnoreCase("ja")) {
-				addCustomer(); // Calls method to add another customer
+				// Calls method to add another customer
+				addCustomer(); 
 			} else if (addMore1.equalsIgnoreCase("nej")) {
-				keepAdding = false; // Stops adding customers
+				// Stops adding customers
+				keepAdding = false; 
 			} else {
-				System.out.println("Angiv venligst et af svarmulighederne"); // Prompts user to provide a valid response
+				// Prompts user to provide a valid response
+				System.out.println("Angiv venligst et af svarmulighederne"); 
 			}
 		}
-
-		Customer customerToPrint = customerController.getCurrentCustomer(); // Gets the current customer
-		if (customerToPrint != null) { // Checks if the customer exists
-			System.out.println("Navn: " + customerToPrint.getName()); // Prints customer's name
-			System.out.println("Telefon: " + customerToPrint.getPhoneNo()); // Prints customer's phone number
-			System.out.println("Email: " + customerToPrint.getEmail()); // Prints customer's email
-			System.out.println("Adresse: " + customerToPrint.getAddress()); // Prints customer's address
+		
+		// Gets the current customer
+		Customer customerToPrint = customerController.getCurrentCustomer(); 
+		// Checks if the customer exists
+		if (customerToPrint != null) { 
+			// Prints customer's name
+			System.out.println("Navn: " + customerToPrint.getName()); 
+			// Prints customer's phone number
+			System.out.println("Telefon: " + customerToPrint.getPhoneNo()); 
+			// Prints customer's email
+			System.out.println("Email: " + customerToPrint.getEmail()); 
+			// Prints customer's address
+			System.out.println("Adresse: " + customerToPrint.getAddress()); 
 
 			// Checks if the customer is a private customer and prints specific details
 			if (customerToPrint instanceof Private) {
@@ -95,7 +116,8 @@ public class CustomerTUI {
 				System.out.println("Erhverv kundenr: " + b.getBusinessCustomerNo());
 			}
 		} else {
-			System.out.println("Handlingen kan ikke gennemføres."); // Prints a message if the action cannot be completed
+			// Prints a message if the action cannot be completed
+			System.out.println("Handlingen kan ikke gennemføres."); 
 		}
 	}
 
@@ -103,28 +125,42 @@ public class CustomerTUI {
 	 * Updates customer information based on user input.
 	 */
 	private void updateCustomer() {
-		String email = TextInput.inputString("Indtast kundens nuværende email: "); // Prompts for current email
-		Customer customer = customerController.findCustomer(email); // Finds the customer by email
-		String replace = TextInput.inputString("Hvad ønsker du at ændre på? (email/adresse/telefon)"); // Prompts for the detail to change
-	    String newEmail = customer.getEmail(); // Gets current email
-	    String newAddress = customer.getAddress(); // Gets current address
-	    String newPhoneNo = customer.getPhoneNo(); // Gets current phone number
+		// Prompts for current email
+		String email = TextInput.inputString("Indtast kundens nuværende email: "); 
+		// Finds the customer by email
+		Customer customer = customerController.findCustomer(email); 
+		// Prompts for the detail to change
+		String replace = TextInput.inputString("Hvad ønsker du at ændre på? (email/adresse/telefon)"); 
+	    // Gets current email
+		String newEmail = customer.getEmail(); 
+	    // Gets current address
+		String newAddress = customer.getAddress(); 
+	    // Gets current phone number
+		String newPhoneNo = customer.getPhoneNo(); 
 		if (replace.equalsIgnoreCase("email")) {
-			newEmail = TextInput.inputString("Indtast ny email: "); // Prompts for new email
+			// Prompts for new email
+			newEmail = TextInput.inputString("Indtast ny email: "); 
 		} else if (replace.equalsIgnoreCase("adresse")) {
-			newAddress = TextInput.inputString("Indtast ny adresse: "); // Prompts for new address
+			// Prompts for new address
+			newAddress = TextInput.inputString("Indtast ny adresse: "); 
 		} else if (replace.equalsIgnoreCase("telefon")) {
-			newPhoneNo = TextInput.inputString("Indtast nyt telefonnummer: "); // Prompts for new phone number
+			// Prompts for new phone number
+			newPhoneNo = TextInput.inputString("Indtast nyt telefonnummer: "); 
 		} else {
-			System.out.println("Angiv venligst et af svarmulighederne"); // Prompts for a valid response
+			// Prompts for a valid response
+			System.out.println("Angiv venligst et af svarmulighederne"); 
 		}
-
-		customerController = new CustomerController(); // Re-initializes the customer controller
-	    Customer isUpdated = customerController.updateCustomer(email, newEmail, newPhoneNo, newAddress); // Updates the customer
+		
+		// Re-initializes the customer controller
+		customerController = new CustomerController(); 
+	    // Updates the customer
+		Customer isUpdated = customerController.updateCustomer(email, newEmail, newPhoneNo, newAddress); 
 	    if (isUpdated != null) {
-	        System.out.println("Kundeoplysningerne er blevet opdateret."); // Confirms update
+	    	// Confirms update
+	        System.out.println("Kundeoplysningerne er blevet opdateret."); 
 	    } else {
-	        System.out.println("Kunden blev ikke fundet."); // Reports customer not found
+	    	// Reports customer not found
+	        System.out.println("Kunden blev ikke fundet."); 
 	    }
 	}
 
@@ -132,15 +168,20 @@ public class CustomerTUI {
 	 * Deletes a customer based on email input.
 	 */
 	private void deleteCustomer() {
-		String email = TextInput.inputString("Indtast email"); // Prompts for email
-	    CustomerController customerController = new CustomerController(); // Creates a new customer controller
+		// Prompts for email
+		String email = TextInput.inputString("Indtast email"); 
+		// Creates a new customer controller
+	    CustomerController customerController = new CustomerController(); 
 
-	    Customer isDeleted = customerController.deleteCustomer(email); // Deletes the customer
+	    // Deletes the customer
+	    Customer isDeleted = customerController.deleteCustomer(email); 
 
 	    if (isDeleted != null) {
-	        System.out.println("Kunde med mailen " + email + " er blevet slettet."); // Confirms deletion
+	    	// Confirms deletion
+	        System.out.println("Kunde med mailen " + email + " er blevet slettet."); 
 	    } else {
-	        System.out.println("Kunde findes ikke " + email); // Reports customer not found
+	    	// Reports customer not found
+	        System.out.println("Kunde findes ikke " + email); 
 	    }
 	}
 
@@ -148,26 +189,32 @@ public class CustomerTUI {
 	 * Displays a list of all customers.
 	 */
 	private void customerList() {
-		List<Customer> customers = new CustomerController().findAll(); // Gets a list of all customers
-		displayCustomers(customers); // Displays the list of customers
+		// Gets a list of all customers
+		List<Customer> customers = new CustomerController().findAll(); 
+		// Displays the list of customers
+		displayCustomers(customers); 
 	}
 
 	/**
 	 * Displays the details of the provided list of customers.
 	 */
 	private void displayCustomers(List<Customer> customers) {
-		System.out.println("Kunder:"); // Prints header
+		// Prints header
+		System.out.println("Kunder:"); 
 		for(Customer customer : customers) {
+			// Prints customer details
 			System.out.printf("\tNavn: %s\tEmail: %s\tTlf: %s\tAdresse: %s", customer.getName(), customer.getEmail(), customer.getPhoneNo(),
-					 customer.getAddress()); // Prints customer details
+					 customer.getAddress()); 
 			if (customer instanceof Private) {
 				Private p = (Private) customer;
-				System.out.printf("\tKundeNr: %s\n", p.getCustomerNo()); // Prints private customer number
+				// Prints private customer number
+				System.out.printf("\tKundeNr: %s\n", p.getCustomerNo()); 
 			}
 			if (customer instanceof Business) {
 				Business b = (Business) customer;
+				// Prints business customer details
 				System.out.printf("\tFirmanavn: %s\tCVR: %s\tErhverv kundenr: %s\n", b.getCompanyName(), b.getCvr(),
-						b.getBusinessCustomerNo()); // Prints business customer details
+						b.getBusinessCustomerNo()); 
 			}
 		}
 	}

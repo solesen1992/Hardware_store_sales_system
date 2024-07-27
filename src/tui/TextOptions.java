@@ -83,12 +83,12 @@ public class TextOptions {
         if (!cancellable) {
             lowerBound = 1;
         }
-        // Loops until a valid choice is made
+        // Loops until a valid choice is made.
         while (choice < lowerBound || choice >= size) {
             // Prompts the user for a number input
             choice = TextInput.inputNumber("Vælg et tal");
         }
-        // Returns the user's choice
+        // Returns the user's choice.
         return choice;
     }
 

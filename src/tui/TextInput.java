@@ -10,7 +10,6 @@ import java.util.Scanner; // Imports the Scanner class
  * @authors Istvan Knoll, Mogens Holm Iversen, Gruppe 2 
  */
 public class TextInput {
-    // instance variables 
     // No instance variables are declared in this class
 
     /**

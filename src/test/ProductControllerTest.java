@@ -26,7 +26,7 @@ class ProductControllerTest {
     private ProductController productController;  
     
     /**
-     * This sets up the task that needs to be done before anything else 
+     * This sets up the task that needs to be done before anything else.
      * @throws Exception
      */
     @BeforeAll
