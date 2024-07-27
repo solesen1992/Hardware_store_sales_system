@@ -169,16 +169,16 @@ class CustomerControllerTest {
 	void testGetCurrentCustomer() {
 		// Test getting the current customer when no customer is selected
 		Customer currentCustomer = customerController.getCurrentCustomer();
-		// Assert that the current customer is null
+		// Asserts that the current customer is null
 		assertNull(currentCustomer); 
 
 		// Test finding and setting a private customer as the current customer
 		Customer privateCustomer = customerController.findCustomer("private@example.com");
 
 		currentCustomer = customerController.getCurrentCustomer();
-		// Assert that the current customer is not null
+		// Asserts that the current customer is not null
 		assertNotNull(currentCustomer); 
-		// Assert that the name is correct
+		// Asserts that the name is correct
 		assertEquals("Private Customer", currentCustomer.getName()); 
 	}
 }
